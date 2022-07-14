@@ -1,0 +1,13 @@
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\SoxMon2.exe
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\appsettings.json
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\SoxMon2.dll
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\SoxMon2.deps.json
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\SoxMon2.runtimeconfig.json
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\SoxMon2.pdb
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\BaseballSharp.dll
+C:\Users\ccraw\source\repos\SoxMonMVC\SoxMon2\obj\Debug\net6.0\PubTmp\Out\BaseballSharp.pdb
