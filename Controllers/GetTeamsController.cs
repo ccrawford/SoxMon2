@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using BaseballSharp;
+using SoxMon2.DTOs;
 
 namespace SoxMon2.Controllers
 {
@@ -8,11 +9,30 @@ namespace SoxMon2.Controllers
     [ApiController]
     public class GetTeamsController : ControllerBase
     {
-        // GET api/GetTeams/
+        // GET api/
         [HttpGet()]
-        public void Get()
+        public List<TeamDto> Get()
         {
-            MLBHelpers.BuildTeamSelect();
+
+            var mlbClient = new MLBClient();
+            var teams = MLBHelpers.AllTeams();
+
+            var retVal = new List<TeamDto>();
+
+            foreach (var team in teams)
+            {
+                retVal.Add(new TeamDto
+                {
+                    Abbr = team.Abbreviation,
+                    Id = team.Id,
+                    Name = team.TeamName,
+                    DivId = team.DivisionId,
+                    LeagueId = team.LeagueId,
+                    City = team.Location,
+                });
+
+            }
+            return retVal;
         }
     }
 }

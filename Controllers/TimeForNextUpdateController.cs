@@ -14,10 +14,11 @@ namespace SoxMon2.Controllers
         {
             var mlbClient = new MLBClient();
             DateTime today = DateTime.UtcNow.AddHours(-5);
-            long retVal = 0;
             bool allComplete = true;
             bool someToStart = false;
             DateTime nextStart = today.AddDays(2);
+
+            // Console.WriteLine($"TeamID in TimeForNextUpdate: {teamId}");
 
             var games = await mlbClient.GetScheduleAsync(today);
             // Loop and check if any games in progress.
@@ -27,6 +28,8 @@ namespace SoxMon2.Controllers
             foreach (var game in games)
             {
                 if (game.CodedGameState == "I") return 0; //Shortcut if there is a game going on.
+                // Not sure what i was thinking about next line...need to add a time limit as well. Maybe warmup.
+                if (game.CodedGameState == "W" && (game.HomeID == teamId || game.AwayID == teamId)) return 0; //TODO look up team of interest and add as a condition.
                 if(game.CodedGameState != "F")
                 {
                     allComplete = false;

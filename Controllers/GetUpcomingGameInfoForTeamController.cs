@@ -28,17 +28,19 @@ namespace SoxMon2.Controllers
                 res = lineScore.ToArray()[0];
             }
 
+            if (sched.AwayID == null) return new UpcomingGameDTO();
+
             var retVal = new UpcomingGameDTO()
             {
                 GamePk = gamePk,
                 HomeAbbr = MLBHelpers.NameToShortName(sched.HomeTeam ?? "XXX"),
-                HomeTeamName = sched.HomeTeam,
+                HomeTeamName = sched.HomeTeam ?? "",
                 AwayAbbr = MLBHelpers.NameToShortName(sched.AwayTeam ?? "XXX"),
-                AwayTeamName = sched.AwayTeam,
+                AwayTeamName = sched.AwayTeam ?? "",
 
                 GameTimeUnix = ((DateTimeOffset)sched.GameTime).ToUnixTimeSeconds(),
-                HomePitcher = sched.HomeProbablePitcher,
-                AwayPitcher = sched.AwayProbablePitcher,
+                HomePitcher = sched.HomeProbablePitcher ?? "",
+                AwayPitcher = sched.AwayProbablePitcher ?? "",
 
                 GameStatus = sched.CodedGameState ?? "X",
                 GameTime = sched.GameTime ?? DateTime.MinValue,
@@ -46,11 +48,15 @@ namespace SoxMon2.Controllers
                 DayNight = (sched.DayNight ?? "?") == "night" ? "nite" : "day",
 
             };
-            if (sched.CodedGameState == "S")
+            if (sched.CodedGameState != sched.StatusCode)
+            {
+                retVal.StatusBlurb = $"{sched.DetailedState} - {sched.Reason}";
+            }
+            else if (sched.CodedGameState == "S")
             {
                 retVal.StatusBlurb = $"{sched.GameTime.Value.DayOfWeek} {retVal.DayNight}";
             }
-            if (sched.CodedGameState == "P")
+            else if (sched.CodedGameState == "P")
             {
                 var startInt = sched.GameTime - DateTime.UtcNow;
                 if (startInt.Value.TotalDays > 1)

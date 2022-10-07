@@ -47,11 +47,16 @@ namespace SoxMon2.Controllers
                 DayNight = (sched.DayNight ?? "?") == "night" ? "nite" : "day",
 
             };
-            if (sched.CodedGameState == "S")
+
+            if (sched.CodedGameState != sched.StatusCode)
+            {
+                retVal.StatusBlurb = $"{sched.DetailedState} - {sched.Reason}";
+            }
+            else if (sched.CodedGameState == "S")
             {
                 retVal.StatusBlurb = $"{sched.GameTime.Value.DayOfWeek} {retVal.DayNight}";
             }
-            if (sched.CodedGameState == "P")
+            else if (sched.CodedGameState == "P")
             {
                 var startInt = sched.GameTime - DateTime.UtcNow;
                 if (startInt.Value.TotalDays > 1)

@@ -45,6 +45,7 @@ namespace SoxMon2.Controllers
                     AwayAbbr = MLBHelpers.NameToShortName(game.AwayTeam ?? "XXX"),
                     AwayTeamRuns = game.AwayScore,
                     Inning = "",
+                    
                     GameStatus = game.CodedGameState,
    //                  GameTime = game.GameTime,
                     GameTimeUnix = ((DateTimeOffset)game.GameTime).ToUnixTimeSeconds(),

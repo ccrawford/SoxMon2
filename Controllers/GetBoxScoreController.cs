@@ -10,7 +10,7 @@ namespace SoxMon2.Controllers
     public class GetBoxScoreController : ControllerBase
     {
 
-        // GET api/<GetBoxScoreController>/5
+        // GET api/<GetBoxScore>/5
         [HttpGet("{gamePk}")]
         public async Task<BoxScoreDTO> Get(int gamePk)
         {
@@ -27,7 +27,7 @@ namespace SoxMon2.Controllers
             {
                 res = lineScore.ToArray()[0];
             }
-
+            var gameTimeSeconds = new DateTimeOffset(sched.GameTime ?? DateTime.MinValue).ToUnixTimeSeconds();
             var retVal = new BoxScoreDTO()
             {
                 CurInning = res.CurrentInning ?? 0,
@@ -47,9 +47,9 @@ namespace SoxMon2.Controllers
                 Pitcher = res.DefensePitcherName ?? "",
                 Batter = res.OffensiveTeamBatterName ?? "",
                 GameStatus = sched.CodedGameState ?? "X",
-                GameTime = sched.GameTime ?? DateTime.MinValue,
+                GameTime = gameTimeSeconds,
                 DayNight = (sched.DayNight ?? "?")=="night" ? "nite" : "day",
-                DoW = sched.GameTime?.ToLocalTime().ToString("ddd") ?? "???",
+                DoW = sched.OfficialDate?.ToString("ddd") ?? "???",
                 ManOnFirst = res.ManOnFirst,
                 ManOnSecond = res.ManOnSecond,
                 ManOnThird = res.ManOnThird,
@@ -58,22 +58,31 @@ namespace SoxMon2.Controllers
             };
             if(sched.CodedGameState == "I")
             {
-                retVal.StatusBlurb = $"{res.InningHalf?.Substring(0,1)}{res.CurrentInning} {res.Outs}o";
+                //   retVal.StatusBlurb = $"{res.InningHalf?.Substring(0,1)}{res.CurrentInning} {res.Outs}o";
+                // On the client, [ is an up arrow and ] is a down arrow in the custom font.
+                string arrow = res.InningHalf == "Top" ? "[" : "]";
+
+                retVal.HomeWinProb = await mlbClient.GetHomeTeamWinProbability(gamePk);
+                
+                retVal.StatusBlurb = $"{arrow}{res.CurrentInning}";
                 retVal.LastComment = await mlbClient.GetLatestComment(gamePk);
             }
-            if(sched.CodedGameState == "F")
+            if(sched.CodedGameState == "F" || sched.CodedGameState == "O")
             {
-                retVal.StatusBlurb = $"{retVal.DoW} Final";
+                retVal.StatusBlurb = "Final";
+                var recap = await mlbClient.GetContentRecap(gamePk);
+                var blurb = recap.seoTitle;
+                retVal.LastComment = blurb;
             }
-            if (sched.CodedGameState == "O")
+            if (sched.CodedGameState != sched.StatusCode)
             {
-                retVal.StatusBlurb = "Game Over";
+                retVal.StatusBlurb = $"{sched.DetailedState} {sched.Reason}";
             }
-            if(sched.CodedGameState == "S")
+            else if (sched.CodedGameState == "S")
             {
                 retVal.StatusBlurb = $"{retVal.DoW} {retVal.DayNight}";
             }
-            if (sched.CodedGameState == "P")
+            else if (sched.CodedGameState == "P")
             {
                 var startInt = sched.GameTime - DateTime.UtcNow;
                 if (startInt.Value.TotalDays > 1)
@@ -85,8 +94,10 @@ namespace SoxMon2.Controllers
                 
             }
 
-            foreach (var inning in lineScore)
+            var maxInning = lineScore.Skip(Math.Max(0, lineScore.Count() - 10)); //Only room for 10 innings.
+            foreach (var inning in maxInning)
             {
+            
                 if (sched.CodedGameState == "P")
                 {
                     retVal.AwayLineScore += sched.AwayProbablePitcher;

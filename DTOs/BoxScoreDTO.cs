@@ -33,7 +33,7 @@
 
         public string StatusBlurb { get; set; }
 
-        public DateTime GameTime { get; set; }
+        public long? GameTime { get; set; }
 
         public string DayNight { get; set; }
 
@@ -44,6 +44,8 @@
         public bool ManOnThird { get; set; } = false;
 
         public string? LastComment { get; set; }
+
+        public double? HomeWinProb { get; set; }
 
 
     }

@@ -31,14 +31,25 @@ namespace SoxMon2.Controllers
                     displayText = $"{team.divisionRank}. {BaseballSharp.MLBHelpers.NameToShortName(team.name ?? "XXX")} {team.wins}/{team.losses} {team.gamesBack}",
                     gamesBack = (team.gamesBack) ?? "-".PadLeft(5),
                     teamName = BaseballSharp.MLBHelpers.NameToShortName(team.name ?? "XXX"),
-                    pct = team.pct,
                     wins = team.wins,
                     losses = team.losses,
 
                 });
-                Console.WriteLine($"{team.divisionRank} : {team.name} {team.pct}");
             }
             return retVal;
+        }
+
+        [HttpGet()]
+        public async Task<IEnumerable<BaseballSharp.Models.DivisionStanding>> Get()
+        {
+            var mlbClient = new MLBClient();
+
+            //TODO FIX will need to do this manually. Added stuff to league standings model.
+
+            var standings = await mlbClient.GetLeagueStandings();
+
+
+            return standings;
         }
     }
 }

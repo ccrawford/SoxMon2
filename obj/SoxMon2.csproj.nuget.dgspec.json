@@ -4,6 +4,254 @@
     "C:\\Users\\ccraw\\source\\repos\\SoxMonMVC\\SoxMon2\\SoxMon2.csproj": {}
   },
   "projects": {
+    "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.Model\\NWS.Model.csproj": {
+      "version": "1.2.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.Model\\NWS.Model.csproj",
+        "projectName": "NWS.Model",
+        "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.Model\\NWS.Model.csproj",
+        "packagesPath": "C:\\Users\\ccraw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\ccraw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WeatherDataService\\NWS.WeatherDataService.csproj": {
+      "version": "1.2.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WeatherDataService\\NWS.WeatherDataService.csproj",
+        "projectName": "NWS.WeatherDataService",
+        "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WeatherDataService\\NWS.WeatherDataService.csproj",
+        "packagesPath": "C:\\Users\\ccraw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WeatherDataService\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\ccraw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.Model\\NWS.Model.csproj": {
+                "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.Model\\NWS.Model.csproj"
+              },
+              "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient.Default\\NWS.WebClient.Default.csproj": {
+                "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient.Default\\NWS.WebClient.Default.csproj"
+              },
+              "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj": {
+                "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "GeoCoordinate.NetCore": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Runtime.Caching": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient.Default\\NWS.WebClient.Default.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient.Default\\NWS.WebClient.Default.csproj",
+        "projectName": "NWS.WebClient.Default",
+        "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient.Default\\NWS.WebClient.Default.csproj",
+        "packagesPath": "C:\\Users\\ccraw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient.Default\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\ccraw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj": {
+                "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj",
+        "projectName": "NWS.WebClient",
+        "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\NWS.WebClient.csproj",
+        "packagesPath": "C:\\Users\\ccraw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WebClient\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\ccraw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\ccraw\\OneDrive\\Documents\\GitHub\\Baseball-Sharp\\src\\BaseballSharp.csproj": {
       "version": "0.1.9",
       "restore": {
@@ -82,8 +330,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WeatherDataService\\NWS.WeatherDataService.csproj": {
+                "projectPath": "C:\\Users\\ccraw\\OneDrive\\Code\\NationalWeatherServiceLibrary\\NationalWeatherService\\NWS.WeatherDataService\\NWS.WeatherDataService.csproj"
+              },
               "C:\\Users\\ccraw\\OneDrive\\Documents\\GitHub\\Baseball-Sharp\\src\\BaseballSharp.csproj": {
                 "projectPath": "C:\\Users\\ccraw\\OneDrive\\Documents\\GitHub\\Baseball-Sharp\\src\\BaseballSharp.csproj"
+              },
+              "C:\\Users\\ccraw\\source\\repos\\ZipToLatLon\\ZipToLatLon.csproj": {
+                "projectPath": "C:\\Users\\ccraw\\source\\repos\\ZipToLatLon\\ZipToLatLon.csproj"
               }
             }
           }
@@ -121,6 +375,60 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ccraw\\source\\repos\\ZipToLatLon\\ZipToLatLon.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ccraw\\source\\repos\\ZipToLatLon\\ZipToLatLon.csproj",
+        "projectName": "ZipToLatLon",
+        "projectPath": "C:\\Users\\ccraw\\source\\repos\\ZipToLatLon\\ZipToLatLon.csproj",
+        "packagesPath": "C:\\Users\\ccraw\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ccraw\\source\\repos\\ZipToLatLon\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ccraw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

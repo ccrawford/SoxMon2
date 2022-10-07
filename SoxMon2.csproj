@@ -18,7 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OneDrive\Code\NationalWeatherServiceLibrary\NationalWeatherService\NWS.WeatherDataService\NWS.WeatherDataService.csproj" />
     <ProjectReference Include="..\..\..\..\OneDrive\Documents\GitHub\Baseball-Sharp\src\BaseballSharp.csproj" />
+    <ProjectReference Include="..\..\ZipToLatLon\ZipToLatLon.csproj" />
   </ItemGroup>
 
 </Project>
