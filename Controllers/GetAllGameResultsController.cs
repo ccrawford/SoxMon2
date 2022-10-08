@@ -4,7 +4,8 @@ using BaseballSharp.Models;
 using System.Linq;
 using SoxMon2.DTOs;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+// Called when we're displaying the pretty game info.
+// Returns a complete list of the current game results/live summary, etc. for the date.
 
 namespace SoxMon2.Controllers
 {

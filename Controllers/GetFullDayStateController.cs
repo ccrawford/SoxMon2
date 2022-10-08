@@ -4,6 +4,11 @@ using BaseballSharp;
 
 namespace SoxMon2.Controllers
 {
+    // Figures out what's going on currently so we can set the right state in the 
+    //  local device. E.g. favorite team live. Or off season. Or waiting for game to start.
+    // Takes a TeamId so we can check if that team is live.
+    // Called on a schedule based on expected time of next change.
+
     [Route("api/[controller]")]
     [ApiController]
     public class GetFullDayStateController : ControllerBase
@@ -30,6 +35,7 @@ namespace SoxMon2.Controllers
                 doneForDay = false,
                 notStarted = false,
                 dayState = '.',
+                seasonState = ".",
             };
             bool allDone = true;
             bool noneStarted = true;
@@ -43,6 +49,10 @@ namespace SoxMon2.Controllers
                 return retval;
             }
 
+            var seasonDates = await mlbClient.GetSeasonDates(103);  //103 => American league. Arbitrary.
+            // Season states: 
+            // postseason offseason preseason regularseason(?) allstar(?) spring(?)
+            retval.seasonState = seasonDates.seasonState;
             retval.liveGameCount = sched.totalGamesInProgress;
 
             foreach (var game in sched.dates[0].games)
@@ -78,5 +88,6 @@ namespace SoxMon2.Controllers
         public bool doneForDay { get; set; }
         public bool notStarted { get; set; }
         public char dayState { get; set; }
+        public string seasonState { get; set; }
     }
 }
