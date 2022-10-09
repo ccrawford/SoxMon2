@@ -31,6 +31,24 @@ namespace SoxMon2.Controllers
 
             return retval;
         }
+
+
+
+
+    }
+
+    [Route("api/[controller]")]
+    [ApiController]
+    public class GetLatLonFromZipController : ControllerBase
+    {
+        [HttpGet(Name = "GetLatLonFromZip/{zip}")]
+        public ZipLatLon Get(string zip)
+        {
+            ZipLookup zips = ZipLookup.Instance;
+            ZipLatLon latlon = zips.GetLatLon(zip);
+
+            return latlon;
+        }
     }
 }
 
