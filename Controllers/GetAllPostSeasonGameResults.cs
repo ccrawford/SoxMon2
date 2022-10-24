@@ -8,7 +8,7 @@ namespace SoxMon2.Controllers
     [ApiController]
     public class GetAllPostSeasonGameResults : ControllerBase
     {
-        // GET api/<GetAllGameResults>/2022-08-01
+        // GET api/<GetAllPostSeasonGameResults>/2022-08-01
         [HttpGet("{date}")]
         public async Task<IEnumerable<BaseballSharp.Models.PostSeasonGameSummary>> Get(string date)
         {
