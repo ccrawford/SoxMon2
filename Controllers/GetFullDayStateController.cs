@@ -54,9 +54,14 @@ namespace SoxMon2.Controllers
             // postseason offseason preseason regularseason(?) allstar(?) spring(?)
             retval.seasonState = seasonDates.seasonState;
             retval.liveGameCount = sched.totalGamesInProgress;
-
+            retval.onlyLiveGamePk = 0;
+            
             foreach (var game in sched.dates[0].games)
             {
+                
+                if (sched.totalGamesInProgress == 1 && game.status.abstractGameCode == "L")
+                    retval.onlyLiveGamePk = game.gamePk;
+                
                 var home = game.teams.home.team.id;
                 var away = game.teams.away.team.id;
                 var agc = game.status.abstractGameCode;
@@ -84,6 +89,7 @@ namespace SoxMon2.Controllers
     public class FullDayStateDto
     {
         public int liveGameCount { get; set; }
+        public int onlyLiveGamePk { get; set; }
         public bool favTeamLive { get; set; }
         public bool doneForDay { get; set; }
         public bool notStarted { get; set; }
